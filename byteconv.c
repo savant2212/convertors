@@ -14,7 +14,7 @@ main (int argc, char **argv)
       exit(EXIT_FAILURE);
     }
 
-  bytes = atol (argv[1]);
+  bytes = atoll (argv[1]);
 
   kilo = bytes / 1024;
   bytes -= kilo * 1024;
@@ -32,17 +32,17 @@ main (int argc, char **argv)
 
   if (giga != 0)
   {
-    printf ("%d GiB ", giga);
+    printf ("%u GiB ", giga);
   }
   if (mega != 0)
   {
-    printf ("%d MiB ", mega);
+    printf ("%u MiB ", mega);
   }
   if (kilo != 0)
   {
-    printf ("%d KiB ", kilo);
+    printf ("%u KiB ", kilo);
   }
-  printf ("%d bytes\n", bytes);
+  printf ("%llu bytes\n", bytes);
 
   return EXIT_SUCCESS;
 }

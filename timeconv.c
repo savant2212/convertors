@@ -14,10 +14,11 @@ main (int argc, char **argv)
       exit(EXIT_FAILURE);
     }
 
-  seconds = atol (argv[1]); /* atol() - ASCII to long */
+  seconds = atoll (argv[1]); /* atoll() - ASCII to long long*/
 
   minutes = seconds / 60;
-  seconds -= minutes * 60;
+  seconds = seconds % 60;
+  
   if (minutes >= 60)
     {
       hours = minutes / 60;
@@ -42,7 +43,8 @@ main (int argc, char **argv)
   {
     printf ("%d minutes ", minutes);
   }
-  printf ("%d seconds\n", seconds);
+  
+  printf ("%llu seconds\n", seconds);
 
   return EXIT_SUCCESS;
 }

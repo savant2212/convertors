@@ -1,6 +1,6 @@
 CROSS_COMPILE=
 
-CC=$(CROSS_COMPILE)gcc
+CC=$(CROSS_COMPILE)gcc -Wall -Werror
 LD=$(CROSS_COMPILE)ld
 
 SOURCE = byteconv.o timeconv.o
@@ -8,7 +8,7 @@ SOURCE = byteconv.o timeconv.o
 all:  byteconv timeconv
 
 byteconv: $(SOURCE)
-	$(CC) byteconv.o -o byteconv
+	$(CC)  byteconv.o -o byteconv
 timeconv: $(SOURCE)
 	$(CC) timeconv.o -o timeconv
 
